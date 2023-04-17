@@ -1,1 +1,1 @@
-prints hello,world
+shell I/O , redirection
