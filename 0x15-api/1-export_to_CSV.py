@@ -11,7 +11,7 @@ if __name__ == "__main__":
     url = base_url + "/" + employee_id
 
     response = requests.get(url)
-    employee_name = response.json().get("name")
+    employee_name = response.json().get("username")
 
     todo_url = url + "/todos"
     response = requests.get(todo_url)
