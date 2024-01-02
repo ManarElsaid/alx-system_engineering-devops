@@ -20,7 +20,8 @@ if __name__ == "__main__":
 
     records = {employee_id: []}
     for task in tasks:
-        records[employee_id].append({"task": task.get("title"),
+        records[employee_id].append({
+            "task": task.get("title"),
             "completed": task.get("completed"),
             "userame": employee_name})
     with open("{}.json".format(employee_id), "w") as file:
