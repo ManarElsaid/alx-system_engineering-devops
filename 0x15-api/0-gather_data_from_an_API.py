@@ -6,14 +6,14 @@ import requests
 
 
 if __name__ == "__main__":
-    base_url = "https://jsonplaceholder.typicode.com/users"
+    baseUrl = "https://jsonplaceholder.typicode.com/users"
 
-    employee_id = sys.argv[1]
-    url = base_url + "/" + employee_id
+    employeeId = sys.argv[1]
+    url = baseUrl + "/" + employeeId
     response = requests.get(url)
-    employee_name = response.json().get("name")
-    todo_url = url + "/" + "todos"
-    tasks = requests.get(todo_url).json()
+    employeeName = response.json().get("name")
+    todoUrl = url + "/" + "todos"
+    tasks = requests.get(todoUrl).json()
     tasks_count = len(tasks)
 
     completed_tasks = []
@@ -24,7 +24,7 @@ if __name__ == "__main__":
             completed += 1
 
     print("Employee {} is done with tasks({}/{}):"
-          .format(employee_name, completed, tasks_count))
+          .format(employeeName, completed, tasks_count))
 
     for task in completed_tasks:
         print("\t  {}".format(task.get("title")))
