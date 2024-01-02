@@ -22,6 +22,6 @@ if __name__ == "__main__":
     for task in tasks:
         records[employee_id].append({"task": task.get("title"),
             "completed": task.get("completed"),
-            "userame": employee_id})
+            "userame": employee_name})
     with open("{}.json".format(employee_id), "w") as file:
         json.dump(records, file)
