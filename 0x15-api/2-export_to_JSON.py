@@ -24,5 +24,5 @@ if __name__ == "__main__":
             "task": task.get("title"),
             "completed": task.get("completed"),
             "userame": employee_name})
-    with open("{}.json".format(employee_id), "w") as file_name:
-        json.dump(records, file_name)
+    with open("{}.json".format(employee_id), "w") as file:
+        json.dump(records, file)
