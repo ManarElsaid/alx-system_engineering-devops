@@ -11,10 +11,11 @@ def number_of_subscribers(subreddit):
     """function returns the number of subscribers of certain subreddit"""
     if subreddit is None:
         return 0
-    
+
     try:
         base_url = f'https://www.reddit.com/r/{subreddit}/about.json'
-        response = requests.get(base_url, headers={'User-agent' : 'Google Chrome Version 81.0.4044.129'})
+        user_agent = {'User-agent': 'Google Chrome Version 81.0.4044.129'}
+        response = requests.get(base_url, headers=user_agent)
         return response.json().get('data').get('subscribers')
     except Exception:
         return 0
